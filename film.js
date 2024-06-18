@@ -104,3 +104,9 @@ const filmy = [
 		premiera: '2022-12-24',
 	},
 ]
+
+const hashSliced = location.hash.slice(1)
+const foundFilm = filmy.find(film => film["id"]==hashSliced)
+
+document.querySelector(".card-title").innerText = foundFilm["nazev"];
+document.querySelector(".card-text").innerText = foundFilm["popis"];
