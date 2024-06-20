@@ -110,3 +110,27 @@ const foundFilm = filmy.find(film => film["id"]==hashSliced)
 
 document.querySelector(".card-title").innerText = foundFilm["nazev"];
 document.querySelector(".card-text").innerText = foundFilm["popis"];
+const terms_checkbox =document.querySelector("#terms-checkbox");
+const message_input =document.querySelector("#message-input");
+const formular = document.querySelector('#note-form');
+formular.addEventListener('submit', (event) => {
+event.preventDefault();
+event.stopPropagation();
+let is_ok=true;
+if  (message_input.value.length==0) {
+is_ok=false;
+	message_input.classList.add("is-invalid")
+}
+if (!terms_checkbox.checked)
+	{
+is_ok=false
+		terms_checkbox.classList.add("is-invalid")
+	}
+	if (is_ok){
+	formular.innerHTML=`<p class="card-text">${message_input.value}</p>`	
+	}
+});
+
+
+
+

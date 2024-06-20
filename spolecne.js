@@ -12,4 +12,3 @@ const showMenu = (event) => {
 
 document.querySelector('#menu-tlacitko').addEventListener('click', showMenu)
 
-
